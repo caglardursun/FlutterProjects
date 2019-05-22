@@ -19,11 +19,16 @@ class HelloApp extends StatelessWidget {
     //Core route widget
     //() means const .to create new instance
     return MaterialApp(
+      theme: ThemeData(
+        brightness: Brightness.light,
+        primarySwatch: Colors.orange,
+        accentColor: Colors.deepPurple
+      ),
         home: Scaffold(
       appBar: AppBar(
         title: Text("What a long nested shit :/"),
       ),
-      body: PhotosManager(),
+      body: PhotosManager("My doughter"),
     ));
   }
 }

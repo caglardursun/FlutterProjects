@@ -16,7 +16,7 @@ class Photos extends StatelessWidget {
             (element) => Card(
                   child: Column(
                     children: <Widget>[
-                      Image.asset("assets/mydaughter.jpg"),
+                      //Image.asset("assets/mydaughter.jpg"),
                       Text(element)
                     ],
                   ),
