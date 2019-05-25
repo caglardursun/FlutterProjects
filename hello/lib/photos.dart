@@ -23,9 +23,9 @@ class Photos extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return ListView.builder(
+    return _photos.length> 0 ?  ListView.builder(
         itemBuilder: _buildPhotosItem,
         itemCount: _photos.length,
-    );
+    ) : Center(child: Text("No Photos Found Add Some"),);
   }
 }

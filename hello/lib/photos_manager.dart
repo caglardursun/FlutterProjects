@@ -9,12 +9,14 @@ class PhotosManager extends StatefulWidget
   //this keyword is different from other languages
   //this means assign automatically
   //{this.startingPhoto} calling (startingPhoto: "dasdasdsadas") from the other side
-  PhotosManager({this.startingPhoto = "Default Photo"}){
-    print("Photos manager called");
+  PhotosManager({this.startingPhoto})
+  {
+    print("Photos manager ctor");
   }
 
   @override
-  State<StatefulWidget> createState() {
+  State<StatefulWidget> createState() 
+  {
     print("Photos manager createState");
     return _PhotosManagerState();
   }
@@ -27,8 +29,13 @@ class _PhotosManagerState extends State<PhotosManager>
 
   @override
   void initState() {
-    print("_PhotosManagerState initState");
-    _photos.add(widget.startingPhoto);
+    
+    print("_PhotosManagerState initState()");
+    if(widget.startingPhoto != null){
+      _photos.add(widget.startingPhoto);
+    }
+
+    //_photos.add(widget.startingPhoto);
     //goes 2 base like other langu
     super.initState();
   }
@@ -50,6 +57,7 @@ class _PhotosManagerState extends State<PhotosManager>
   @override
   Widget build(BuildContext context) {
     print("_PhotosManagerState build");
+
     return Column(children: [
       Container(
         margin: EdgeInsets.all(10.5),

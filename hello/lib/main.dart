@@ -33,7 +33,7 @@ class HelloApp extends StatelessWidget {
       appBar: AppBar(
         title: Text("What a long nested shit :/"),
       ),
-      body: PhotosManager(startingPhoto : "My doughter"),
+      body: PhotosManager(),
     ));
   }
 }
