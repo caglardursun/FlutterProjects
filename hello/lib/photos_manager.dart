@@ -1,13 +1,15 @@
-import "package:flutter/material.dart";
+import 'package:flutter/material.dart';
 import './photos.dart';
+import './photos_control.dart';
 
 class PhotosManager extends StatefulWidget 
 {
 
-  String startingPhoto;
+  final String startingPhoto;
   //this keyword is different from other languages
   //this means assign automatically
-  PhotosManager(this.startingPhoto){
+  //{this.startingPhoto} calling (startingPhoto: "dasdasdsadas") from the other side
+  PhotosManager({this.startingPhoto = "Default Photo"}){
     print("Photos manager called");
   }
 
@@ -18,8 +20,10 @@ class PhotosManager extends StatefulWidget
   }
 }
 
-class _PhotosManagerState extends State<PhotosManager> {
-  List<String> _photos = [];
+class _PhotosManagerState extends State<PhotosManager> 
+{
+  
+  final List<String> _photos = [];
 
   @override
   void initState() {
@@ -35,23 +39,23 @@ class _PhotosManagerState extends State<PhotosManager> {
     super.didUpdateWidget(oldWidget);
   }
 
+  void _addPhoto(String photo)
+  {
+    setState((){
+      _photos.add(photo);
+    });
+    print(photo);
+  }
+
   @override
   Widget build(BuildContext context) {
     print("_PhotosManagerState build");
     return Column(children: [
       Container(
         margin: EdgeInsets.all(10.5),
-        child: RaisedButton(
-          color: Theme.of(context).primaryColor,
-          onPressed: () {
-            setState(() {
-              _photos.add("Test");
-            });
-          },
-          child: Text("Add Photo"),
-        ),
+        child: PhotosControl(_addPhoto),
       ),
-      Photos(_photos)
+      Expanded(child: Photos(_photos))
     ]);
   }
 }

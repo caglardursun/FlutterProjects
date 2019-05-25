@@ -10,13 +10,14 @@ class Photos extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    
+    return ListView(
       children: _photos
           .map(
             (element) => Card(
                   child: Column(
                     children: <Widget>[
-                      //Image.asset("assets/mydaughter.jpg"),
+                      Image.asset("assets/mydaughter.jpg"),
                       Text(element)
                     ],
                   ),

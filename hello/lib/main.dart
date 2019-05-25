@@ -1,16 +1,20 @@
 import "package:flutter/material.dart";
 import 'package:hello/photos_manager.dart';
+//import 'package:flutter/rendering.dart';
 
 //Notes :
 // I didn't like the whole class structure in first impression
 
-// main()
-// {
-//   runApp(HelloApp());
-// }
+main()
+{
+  // debugPaintSizeEnabled = true;
+  // debugPaintBaselinesEnabled = true;
 
-void main() => runApp(HelloApp());
+  runApp(HelloApp());
+}
 
+//void main() => runApp(HelloApp());
+ 
 class HelloApp extends StatelessWidget {
   
 
@@ -19,6 +23,7 @@ class HelloApp extends StatelessWidget {
     //Core route widget
     //() means const .to create new instance
     return MaterialApp(
+      //debugShowMaterialGrid: true,
       theme: ThemeData(
         brightness: Brightness.light,
         primarySwatch: Colors.orange,
@@ -28,7 +33,7 @@ class HelloApp extends StatelessWidget {
       appBar: AppBar(
         title: Text("What a long nested shit :/"),
       ),
-      body: PhotosManager("My doughter"),
+      body: PhotosManager(startingPhoto : "My doughter"),
     ));
   }
 }
