@@ -8,22 +8,24 @@ class Photos extends StatelessWidget {
 
   Photos(this._photos);
 
-  @override
-  Widget build(BuildContext context) {
-    
-    return ListView(
-      children: _photos
-          .map(
-            (element) => Card(
+  Widget _buildPhotosItem(BuildContext context,int index){
+
+    return Card(
                   child: Column(
                     children: <Widget>[
                       Image.asset("assets/mydaughter.jpg"),
-                      Text(element)
+                      Text(_photos[index])
                     ],
                   ),
-                ),
-          )
-          .toList(),
+        );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+
+    return ListView.builder(
+        itemBuilder: _buildPhotosItem,
+        itemCount: _photos.length,
     );
   }
 }
