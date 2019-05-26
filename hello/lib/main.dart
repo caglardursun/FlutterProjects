@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
-import 'package:hello/photos_manager.dart';
-//import 'package:flutter/rendering.dart';
+import './photos_manager.dart';
+import 'pages/home.dart';
 
 //Notes :
 // I didn't like the whole class structure in first impression
@@ -29,11 +29,7 @@ class HelloApp extends StatelessWidget {
         primarySwatch: Colors.orange,
         accentColor: Colors.deepPurple
       ),
-        home: Scaffold(
-      appBar: AppBar(
-        title: Text("What a long nested shit :/"),
-      ),
-      body: PhotosManager(),
-    ));
+      home: HomePage()
+    );
   }
 }
