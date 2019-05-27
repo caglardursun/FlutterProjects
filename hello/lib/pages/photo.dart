@@ -1,19 +1,25 @@
 import 'package:flutter/material.dart';
 
 class PhotoPage extends StatelessWidget {
+
+  final String title;
+  final String imageUrl;
+
+  PhotoPage(this.title,this.imageUrl);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Photo Details :)"),
+          title: Text(title),
         ),
         body: Column(          
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Image.asset("assets/mydaughter.jpg"),
+            Image.asset(imageUrl),
             Container(
               padding: EdgeInsets.all(10.0),
-              child: Text("Details"),
+              child: Text(title),
             ),
             Container(
               padding: EdgeInsets.all(10.0),

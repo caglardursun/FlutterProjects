@@ -13,7 +13,9 @@ class PhotosControl extends StatelessWidget {
     return RaisedButton(
           color: Theme.of(context).primaryColor,
           onPressed: () {
-            addPhotos("Test");
+            addPhotos( 
+              {'title':'Çikilop', 'image':'assets/mydaughter.jpg'}
+            );
           },
           child: Text("Add Photo",textAlign: TextAlign.center),
         );

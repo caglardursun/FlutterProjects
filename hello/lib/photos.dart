@@ -5,16 +5,20 @@ class Photos extends StatelessWidget {
   //final means
   //The value of _photos never changes
   //wierd
-  final List<String> _photos;
+  final List<Map<String, String>> _photos;
 
-  Photos(this._photos);
+  Photos([this._photos = const []]) {
+    print("Photos widget const");
+  }
 
   Widget _buildPhotosItem(BuildContext context, int index) {
+    String imageUrl = _photos[index]['image'];
+    String title = _photos[index]['title'];
     return Card(
       child: Column(
         children: <Widget>[
-          Image.asset("assets/mydaughter.jpg"),
-          Text(_photos[index]),
+          Image.asset(imageUrl),
+          Text(title),
           ButtonBar(
             alignment: MainAxisAlignment.center,
             children: <Widget>[
@@ -22,9 +26,9 @@ class Photos extends StatelessWidget {
                   child: Text('Details'),
                   onPressed: () => Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (BuildContext context) => PhotoPage())
-                      )
-            ),
+                      MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              PhotoPage(title, imageUrl)))),
             ],
           )
         ],

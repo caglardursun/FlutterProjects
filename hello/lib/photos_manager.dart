@@ -5,15 +5,13 @@ import './photos_control.dart';
 class PhotosManager extends StatefulWidget 
 {
 
-  final String startingPhoto;
+  final Map<String,String> startingPhoto;
   //this keyword is different from other languages
   //this means assign automatically
   //{this.startingPhoto} calling (startingPhoto: "dasdasdsadas") from the other side
-  PhotosManager({this.startingPhoto})
-  {
-    print("Photos manager ctor");
-  }
+  PhotosManager({this.startingPhoto});
 
+ 
   @override
   State<StatefulWidget> createState() 
   {
@@ -25,7 +23,7 @@ class PhotosManager extends StatefulWidget
 class _PhotosManagerState extends State<PhotosManager> 
 {
   
-  final List<String> _photos = [];
+  List<Map<String,String>> _photos = [];
 
   @override
   void initState() {
@@ -46,7 +44,7 @@ class _PhotosManagerState extends State<PhotosManager>
     super.didUpdateWidget(oldWidget);
   }
 
-  void _addPhoto(String photo)
+  void _addPhoto(Map<String,String> photo)
   {
     setState((){
       _photos.add(photo);

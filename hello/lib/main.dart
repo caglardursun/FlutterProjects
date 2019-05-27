@@ -1,5 +1,4 @@
 import "package:flutter/material.dart";
-import './photos_manager.dart';
 import 'pages/home.dart';
 
 //Notes :
