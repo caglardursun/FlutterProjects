@@ -17,3 +17,5 @@ samples, guidance on mobile development, and a full API reference.
 * hello : Basic structure of Flutter apps
     - [x] `view and view manager can be imlimented or not`
     - [x] `Custom widget implimentation`
+    - [x] `ListView, Expanders and some of the common widget usage`
+    - [x] `Navigation`
